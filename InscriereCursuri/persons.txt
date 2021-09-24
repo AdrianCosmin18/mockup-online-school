@@ -1,0 +1,7 @@
+10,Mihaita Andrei,Mihai1234,teacher,mihai10@yahoo.com,44
+20,Andrei George,Andu12,student,andu@yahoo.com,19
+33,Cosmin,Cosmin1812,student,cosmin@yahoo.com,20
+40,Laurentiu Stan,Laur19,student,laur@yahoo.com,25
+99,Andrei Raiciu,rand123,teacher,andu@yahoo.com,39
+8,Dumitran,Dumi99,teacher,dumi@yahoo.com,45
+97,David Moise,David17,teacher,david@yahoo.com,53

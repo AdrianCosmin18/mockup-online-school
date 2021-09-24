@@ -1,0 +1,6 @@
+1,Analyze,Math
+2,Calculations 1,Math
+3,Data Structures,Informatics
+4,Web Techniques,Informatics
+5,LFA,Computer Science
+6,Geometry,Math
