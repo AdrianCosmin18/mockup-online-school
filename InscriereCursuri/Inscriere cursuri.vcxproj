@@ -160,6 +160,7 @@
     <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="cards.txt" />
     <Text Include="courses.txt" />
     <Text Include="persons.txt" />
   </ItemGroup>

@@ -1,3 +1,7 @@
-﻿  Inscriere cursuri.cpp
-C:\Users\Cosmin\C++ Meditatii\OOP\Polimorfism\Proiect Platorma Inscriere Cursuri\Inscriere cursuri\ControlPerson.h(141,14): warning C4101: 'n': unreferenced local variable
-  Inscriere cursuri.vcxproj -> C:\Users\Cosmin\C++ Meditatii\OOP\Polimorfism\Proiect Platorma Inscriere Cursuri\Inscriere cursuri\Debug\Inscriere cursuri.exe
+﻿  ControlStudentIDCard.cpp
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
+  Inscriere cursuri.cpp
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
+  Generating Code...
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlStudentIDCard.h(61): warning C4715: 'ControlStudentIDCard::get_itr_poz': not all control paths return a value
+  Inscriere cursuri.vcxproj -> C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\Debug\Inscriere cursuri.exe

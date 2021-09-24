@@ -1,5 +1,5 @@
 //#include"Student.h"
-#include"StudentIDCard.h"
+#include"ControlStudentIDCard.h"
 
 int main()
 {
@@ -31,8 +31,18 @@ int main()
     cc.update_course(6,"Geometry 2", "Math");
     cout<<cc.GetCourseByName("Geometry 2")->describe();*/
 
-    StudentIDCard sc("1,10,ZX789");
-    cout<<sc.describe();
+    ControlStudentIDCard* ccard = new ControlStudentIDCard;
+
+    
+    
+    list<StudentIDCard*>::iterator it = ccard->get_itr_poz(1);
+
+
+    ccard->erase_card(3);
+    ccard->traverse();
+    
+  
+
 
 }
 

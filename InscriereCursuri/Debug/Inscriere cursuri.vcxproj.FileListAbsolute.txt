@@ -1,1 +1,2 @@
 C:\Users\Cosmin\C++ Meditatii\OOP\Polimorfism\Proiect Platorma Inscriere Cursuri\Inscriere cursuri\Debug\Inscriere cursuri.exe
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\Debug\Inscriere cursuri.exe

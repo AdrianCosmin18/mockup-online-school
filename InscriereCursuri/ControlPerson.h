@@ -76,6 +76,8 @@ public:
 	void erase(int id) {
 
 		int poz = poz_person(id);
+
+
 		list<Person*>::iterator itr = poz_itr_person(poz);
 		persons.erase(itr);
 	}
