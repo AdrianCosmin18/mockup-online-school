@@ -142,9 +142,11 @@
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="ControlBook.cpp" />
     <ClCompile Include="ControlCourse.cpp" />
+    <ClCompile Include="ControlEnrolment.cpp" />
     <ClCompile Include="ControlPerson.cpp" />
     <ClCompile Include="ControlStudentIDCard.cpp" />
     <ClCompile Include="Course.cpp" />
+    <ClCompile Include="Enrolment.cpp" />
     <ClCompile Include="Inscriere cursuri.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Student.cpp" />
@@ -155,9 +157,11 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="ControlBook.h" />
     <ClInclude Include="ControlCourse.h" />
+    <ClInclude Include="ControlEnrolment.h" />
     <ClInclude Include="ControlPerson.h" />
     <ClInclude Include="ControlStudentIDCard.h" />
     <ClInclude Include="Course.h" />
+    <ClInclude Include="Enrolment.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentIDCard.h" />
@@ -167,6 +171,7 @@
     <Text Include="books.txt" />
     <Text Include="cards.txt" />
     <Text Include="courses.txt" />
+    <Text Include="enrolments.txt" />
     <Text Include="persons.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

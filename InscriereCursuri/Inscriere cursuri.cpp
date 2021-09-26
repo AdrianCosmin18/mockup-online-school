@@ -1,12 +1,12 @@
-#include"ControlBook.h"
+#include"ControlEnrolment.h"
 
 int main()
 {
    
-    ControlBook* cb = new ControlBook;
-    
-    Book* b1 = cb->GetBookByName("Data Science Part 1");
-    cout<<b1->describe();
+    ControlEnrolment* ce = new ControlEnrolment;
+
+    Enrolment* e1 = ce->GetEnrolmentByIDs(33, 6);
+    cout<<e1->describe();
     
 
 

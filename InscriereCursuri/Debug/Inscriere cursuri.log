@@ -1,8 +1,4 @@
-﻿  ControlBook.cpp
+﻿  Inscriere cursuri.cpp
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
-  Inscriere cursuri.cpp
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
-  Generating Code...
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlBook.h(95): warning C4715: 'ControlBook::GetBookByName': not all control paths return a value
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlBook.h(84): warning C4715: 'ControlBook::GetIDbyName': not all control paths return a value
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlEnrolment.h(86): warning C4715: 'ControlEnrolment::GetEnrolmentByIDs': not all control paths return a value
   Inscriere cursuri.vcxproj -> C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\Debug\Inscriere cursuri.exe
