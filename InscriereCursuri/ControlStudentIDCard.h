@@ -46,9 +46,8 @@ public:
 		return -1;
 	}
 
-	list<StudentIDCard*>::iterator get_itr_poz(int id) {
+	list<StudentIDCard*>::iterator get_itr_poz(int poz) {
 
-		int poz = get_poz(id);
 		int p = -1;
 		list<StudentIDCard*>::iterator itr;
 
@@ -62,11 +61,43 @@ public:
 
 	void erase_card(int id) {
 
-		int poz = get_poz(id)+1;
+		int poz = get_poz(id);
 
 		cout << poz << endl;
 		list<StudentIDCard*>::iterator itr = get_itr_poz(poz);
 		cards.erase(itr);
+	}
+
+
+	void modify_card(int id, string cs) {
+
+		int poz = get_poz(id);
+		list<StudentIDCard*>::iterator itr = get_itr_poz(poz);
+		(*itr)->set_card_number(cs);
+	}
+
+
+	int GetCardIDbyStudentId(int sID) {
+
+		list<StudentIDCard*>::iterator itr;
+
+		for (itr = cards.begin(); itr != cards.end(); ++itr) {
+
+			if ((*itr)->get_studentId() == sID)
+				return (*itr)->get_id();
+		}
+	}
+
+	StudentIDCard* GetStudentIDCardByStudentID(int id) {
+
+		int IDCard = GetCardIDbyStudentId(id);
+
+		list<StudentIDCard*>::iterator itr;
+		for (itr = cards.begin(); itr != cards.end(); ++itr) {
+
+			if ((*itr)->get_id() == IDCard)
+				return *itr;
+		}
 	}
 };
 

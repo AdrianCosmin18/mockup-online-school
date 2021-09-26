@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="ControlBook.cpp" />
     <ClCompile Include="ControlCourse.cpp" />
     <ClCompile Include="ControlPerson.cpp" />
     <ClCompile Include="ControlStudentIDCard.cpp" />
@@ -150,6 +152,8 @@
     <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="ControlBook.h" />
     <ClInclude Include="ControlCourse.h" />
     <ClInclude Include="ControlPerson.h" />
     <ClInclude Include="ControlStudentIDCard.h" />
@@ -160,6 +164,7 @@
     <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="books.txt" />
     <Text Include="cards.txt" />
     <Text Include="courses.txt" />
     <Text Include="persons.txt" />

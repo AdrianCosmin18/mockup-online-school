@@ -1,0 +1,6 @@
+729,20,History of Math,23-09-2021
+342,33,Calculations,19-03-2021
+543,40,Data Science Part 1,10-10-2020
+432,111,OOP C++ Advanced,30-01-2021
+6339,33,Analyse2,09-09-2021
+12,40,Web Technics,01-02-2019

@@ -42,6 +42,12 @@
     <ClCompile Include="ControlStudentIDCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Book.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlBook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -68,6 +74,12 @@
     <ClInclude Include="ControlStudentIDCard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlBook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="persons.txt">
@@ -77,6 +89,9 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="cards.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="books.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
