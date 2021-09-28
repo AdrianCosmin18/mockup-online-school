@@ -146,12 +146,14 @@
     <ClCompile Include="ControlPerson.cpp" />
     <ClCompile Include="ControlStudentIDCard.cpp" />
     <ClCompile Include="Course.cpp" />
+    <ClCompile Include="Director.cpp" />
     <ClCompile Include="Enrolment.cpp" />
     <ClCompile Include="Inscriere cursuri.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentIDCard.cpp" />
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="ViewStudent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
@@ -161,11 +163,13 @@
     <ClInclude Include="ControlPerson.h" />
     <ClInclude Include="ControlStudentIDCard.h" />
     <ClInclude Include="Course.h" />
+    <ClInclude Include="Director.h" />
     <ClInclude Include="Enrolment.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentIDCard.h" />
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="ViewStudent.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="books.txt" />

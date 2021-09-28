@@ -1,13 +1,12 @@
-#include"ControlEnrolment.h"
+#include"Director.h"
 
 int main()
 {
    
     ControlEnrolment* ce = new ControlEnrolment;
 
-    Enrolment* e1 = ce->GetEnrolmentByIDs(33, 6);
-    cout<<e1->describe();
-    
+    Director* d = new Director("Andrei George","Andrei1234","1234");
+    cout<<d->describe();
 
 
 
