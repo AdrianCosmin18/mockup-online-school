@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="ControlBook.cpp" />
     <ClCompile Include="ControlCourse.cpp" />
+    <ClCompile Include="ControlDirector.cpp" />
     <ClCompile Include="ControlEnrolment.cpp" />
     <ClCompile Include="ControlPerson.cpp" />
     <ClCompile Include="ControlStudentIDCard.cpp" />
@@ -156,9 +158,11 @@
     <ClCompile Include="ViewStudent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="ControlBook.h" />
     <ClInclude Include="ControlCourse.h" />
+    <ClInclude Include="ControlDirector.h" />
     <ClInclude Include="ControlEnrolment.h" />
     <ClInclude Include="ControlPerson.h" />
     <ClInclude Include="ControlStudentIDCard.h" />
@@ -175,6 +179,7 @@
     <Text Include="books.txt" />
     <Text Include="cards.txt" />
     <Text Include="courses.txt" />
+    <Text Include="directors.txt" />
     <Text Include="enrolments.txt" />
     <Text Include="persons.txt" />
   </ItemGroup>

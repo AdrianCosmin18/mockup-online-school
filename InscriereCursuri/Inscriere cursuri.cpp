@@ -1,13 +1,15 @@
-#include"Director.h"
+#include"ControlDirector.h"
 
 int main()
 {
    
     ControlEnrolment* ce = new ControlEnrolment;
 
-    Director* d = new Director("Andrei George","Andrei1234","1234");
-    cout<<d->describe();
+    ControlDirector* cd = new ControlDirector;
+    
+    Admin * a;
 
+    a = cd->GetDirectorByName("Paul Vlad");
 
 
     
