@@ -7,9 +7,10 @@ int main()
 
     ControlDirector* cd = new ControlDirector;
     
-    Admin * a;
-
-    a = cd->GetDirectorByName("Paul Vlad");
+    Director * d = cd->GetDirectorByName("Paul Vlad");
+    Admin* a = dynamic_cast<Admin*>(d);
+    a->erase_invest(50.3);
+    a->traverse();
 
 
     

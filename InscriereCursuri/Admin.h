@@ -66,5 +66,38 @@ public:
 		}
 		cout << endl;
 	}
+
+	int get_poz(double nr) {
+
+		int poz = -1;
+		list<double>::iterator itr;
+		for (itr = investments.begin(); itr != investments.end(); ++itr) {
+
+			poz++;
+			if (nr == (*itr))
+				return poz;
+		}
+	}
+
+	list<double>::iterator get_itr_poz(int poz) {
+
+		int p = -1;
+		list<double>::iterator itr;
+		for (itr = investments.begin(); itr != investments.end(); ++itr) {
+
+			p++;
+			if (p == poz)
+				return itr;
+		}
+
+	}
+
+	void erase_invest(double nr) {
+
+		int poz = get_poz(nr);
+		list<double>::iterator itr = get_itr_poz(poz);
+		investments.erase(itr);
+	}
+
 };
 

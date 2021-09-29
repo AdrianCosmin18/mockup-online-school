@@ -66,6 +66,9 @@
     <ClCompile Include="Admin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ViewDirector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -104,9 +107,6 @@
     <ClInclude Include="ControlEnrolment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ViewStudent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Director.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -114,6 +114,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Admin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewDirector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
