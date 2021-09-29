@@ -1,12 +1,9 @@
-﻿  Admin.cpp
+﻿  Inscriere cursuri.cpp
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
-  ControlDirector.cpp
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
-  Inscriere cursuri.cpp
+  ViewDirector.cpp
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(143,14): warning C4101: 'n': unreferenced local variable
   Generating Code...
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlDirector.h(91): warning C4715: 'ControlDirector::GetDirectorByName': not all control paths return a value
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\Admin.h(80): warning C4715: 'Admin::get_poz': not all control paths return a value
-C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\Admin.h(93): warning C4715: 'Admin::get_itr_poz': not all control paths return a value
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(130): warning C4715: 'ControlPerson::GetPersonbyName': not all control paths return a value
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(74): warning C4715: 'ControlPerson::poz_itr_person': not all control paths return a value
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlDirector.h(63): warning C4715: 'ControlDirector::get_itr_poz': not all control paths return a value
   Inscriere cursuri.vcxproj -> C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\Debug\Inscriere cursuri.exe

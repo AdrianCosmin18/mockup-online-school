@@ -29,7 +29,7 @@ public:
 	void menu() {
 
 		cout << "Pentru a afisa toti studentii apasati 11\n";
-		cout << "Pentru a verifica existenta unui student apasati  12\n";
+		cout << "Pentru a verifica existenta unui student apasati 12\n";
 		cout << "Pentru a afla detalii despre un student apasati 13\n";
 		cout << "Pentru a obtine ID-ul unui student apasati 14\n";
 		cout << "Pentru a afisa cursurile unui student apasati 15\n";
@@ -61,6 +61,59 @@ public:
 		cout << "Pentru a iesi apasati \n";
 	}
 
+	void exist_student() {
 
+		string name;
+		cout << "Introduceti numele studentului : ";
+		getline(cin, name);
+
+		if (cp->GetIDbyName(name) != -1) {
+
+			Person* p = cp->GetPersonbyName(name);
+
+
+			if (p->get_type() == "teacher")
+				cout << "Nu exista acest student\n";
+
+			else {
+
+				Student* s = dynamic_cast<Student*>(p);
+				cout << s->describe();
+			}
+
+		}
+
+		else {
+			cout << "Nu exista acest student\n\n";
+		}
+	}
+
+	void play() {
+
+		bool oprire;
+		oprire = false;
+
+		while (oprire == false) {
+
+			menu();
+
+			int alegere;
+			string a;
+			cout << "\nAlgere : "; getline(cin, a);
+			alegere = stoi(a);
+
+			switch (alegere) {
+
+			case 11:cp->traverse();
+				break;
+
+			case 12: exist_student();
+				break;
+
+			
+			}
+
+		}
+	}
 };
 

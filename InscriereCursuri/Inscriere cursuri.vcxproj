@@ -156,7 +156,6 @@
     <ClCompile Include="StudentIDCard.cpp" />
     <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="ViewDirector.cpp" />
-    <ClCompile Include="ViewStudent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />

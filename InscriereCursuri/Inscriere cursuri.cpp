@@ -1,16 +1,22 @@
-#include"ControlDirector.h"
+#include"ViewDirector.h"
 
 int main()
 {
    
-    ControlEnrolment* ce = new ControlEnrolment;
 
-    ControlDirector* cd = new ControlDirector;
+    /*ControlDirector* cd = new ControlDirector;
     
     Director * d = cd->GetDirectorByName("Paul Vlad");
-    Admin* a = dynamic_cast<Admin*>(d);
-    a->erase_invest(50.3);
-    a->traverse();
+    Admin* a = dynamic_cast<Admin*>(d);*/
+
+    ViewDirector* vd = new ViewDirector;
+
+    vd->play();
+
+
+
+
+
 
 
     

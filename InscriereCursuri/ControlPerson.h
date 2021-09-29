@@ -147,6 +147,35 @@ public:
 	}
 
 
+	void CountTeacherAndStudents() {
 
+		int countt, counts;
+		countt = counts = 0;
+		list<Person*>::iterator itr;
+		/*for (itr = persons.begin(); itr != persons.end(); ++itr) {
+
+			if ( ((*itr)->describe()).find("teacher") != string::npos ) {
+				countt++;
+			}
+
+			if (((*itr)->describe()).find("student") != string::npos) {
+				counts++;
+			}
+		}*/
+
+		for (itr = persons.begin(); itr != persons.end(); ++itr) {
+
+			if ((*itr)->get_type() == "teacher")
+				countt++;
+
+			if ((*itr)->get_type() == "student")
+				counts++;
+		}
+
+
+
+		cout << "\nNr de profi este de : " << countt;
+		cout << "\nNr de studenti este de : " << counts;
+	}
 };
 

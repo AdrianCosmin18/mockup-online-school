@@ -54,9 +54,6 @@
     <ClCompile Include="ControlEnrolment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ViewStudent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Director.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
