@@ -4,7 +4,7 @@
 class Student:public Person
 {
 private:
-	list<Course>courses;
+	list<Course*>courses;
 
 public:
 
@@ -13,10 +13,10 @@ public:
 	Student(int id, string n, string un, string t, string m, int a) :Person(id, n, un, "Student", m, a){
 	
 
-		add_course(Course(1, "Analyze 1", "Math"));
-		add_course(Course(2, "Calculations 1", "Math"));
-		add_course(Course(3, "Data Structures", "Informatics"));
-		add_course(Course(4, "Web Techniques", "Informatics"));
+		add_course(new Course(1, "Analyze 1", "Math"));
+		add_course(new Course(2, "Calculations 1", "Math"));
+		add_course(new Course(3, "Data Structures", "Informatics"));
+		add_course(new Course(4, "Web Techniques", "Informatics"));
 
 	};
 
@@ -41,27 +41,27 @@ public:
 
 	void traverse() {
 
-		list<Course>::iterator itr;
+		list<Course*>::iterator itr;
 		for (itr = courses.begin(); itr != courses.end(); ++itr) {
 
-			cout << itr->describe();
+			cout << (*itr)->describe();
 			cout << endl;
 		}
 
 	}
 
-	void add_course(Course c) { courses.push_back(c); }
+	void add_course(Course* c) { courses.push_back(c); }
 
 	int poz_course(int id) {
 
-		list<Course>::iterator itr;
+		list<Course*>::iterator itr;
 		int p = -1;
 
 		for (itr = courses.begin(); itr != courses.end(); ++itr) {
 
 			p++;
 
-			if (itr->get_courseID() == id)
+			if ((*itr)->get_courseID() == id)
 				return p;
 
 		}
@@ -70,11 +70,11 @@ public:
 
 	}
 
-	list<Course>::iterator poz_itr_course(int poz) {
+	list<Course*>::iterator poz_itr_course(int poz) {
 
 		int p = -1;
 
-		list<Course>::iterator itr;
+		list<Course*>::iterator itr;
 
 		for (itr = courses.begin(); itr != courses.end(); ++itr) {
 
@@ -90,7 +90,7 @@ public:
 
 		int poz = poz_course(id);
 
-		list<Course>::iterator itr = poz_itr_course(poz);
+		list<Course*>::iterator itr = poz_itr_course(poz);
 
 		courses.erase(itr);
 

@@ -28,6 +28,8 @@ public:
 
 	void menu() {
 
+		cout << endl;
+		cout << endl;
 		cout << "Pentru a afisa toti studentii apasati 11\n";
 		cout << "Pentru a verifica existenta unui student apasati 12\n";
 		cout << "Pentru a afla detalii despre un student apasati 13\n";
@@ -88,6 +90,44 @@ public:
 		}
 	}
 
+	//ce fac daca nu exista acest student
+	void get_details_student() {
+
+		string name;
+		cout << "Introduceti numele studentului : ";
+		getline(cin, name);
+
+		Person* p = cp->GetPersonbyName(name);
+		Student* s = dynamic_cast<Student*>(p);
+		cout << s->describe();
+
+	}
+
+	void get_ID_student() {
+
+		string name;
+		cout << "Introduceti numele studentului : ";
+		getline(cin, name);
+
+		Person* p = cp->GetPersonbyName(name);
+		Student* s = dynamic_cast<Student*>(p);
+		cout << "\nId-ul studentului " << name << " este : " << s->get_personID();
+	}
+
+	void get_courses_from_student() {
+
+		string name;
+		cout << "Introduceti numele studentului ale caror cursuri vrei sa le vezi : ";
+		getline(cin, name);
+
+		Person* p = cp->GetPersonbyName(name);
+		Student* s = dynamic_cast<Student*>(p);
+
+		s->traverse();
+	}
+
+
+
 	void play() {
 
 		bool oprire;
@@ -110,7 +150,17 @@ public:
 			case 12: exist_student();
 				break;
 
-			
+			case 13: get_details_student();
+				break;
+
+			case 14: get_ID_student();
+				break;
+
+			case 15: get_courses_from_student();
+				break;
+
+
+
 			}
 
 		}

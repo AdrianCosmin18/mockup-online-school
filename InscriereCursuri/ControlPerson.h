@@ -107,13 +107,6 @@ public:
 	}
 
 
-	
-	/*bool instanceof(const Teacher* ) {
-
-		return is_base_of<Person, Teacher>::value;
-	}*/
-
-
 
 	Person* GetPersonbyName(string name){
 	
@@ -129,9 +122,20 @@ public:
 		}
 	}
 
+	Person* GetPersonByID(int id) {
 
 
-	void AddCourseToStudent(string name, Course c) {
+		int poz = poz_person(id);
+		list<Person*>::iterator itr = poz_itr_person(poz);
+		return *itr;
+
+	}
+
+
+
+
+
+	void AddCourseToStudent(string name, Course* c) {
 
 		Person* p = GetPersonbyName(name);
 
@@ -152,16 +156,7 @@ public:
 		int countt, counts;
 		countt = counts = 0;
 		list<Person*>::iterator itr;
-		/*for (itr = persons.begin(); itr != persons.end(); ++itr) {
 
-			if ( ((*itr)->describe()).find("teacher") != string::npos ) {
-				countt++;
-			}
-
-			if (((*itr)->describe()).find("student") != string::npos) {
-				counts++;
-			}
-		}*/
 
 		for (itr = persons.begin(); itr != persons.end(); ++itr) {
 

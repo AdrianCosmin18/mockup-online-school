@@ -23,7 +23,7 @@ public:
 
 	ControlCourse() { load(); }
 
-	void add_course(Course *c) { courses.push_back(c); }
+	void add_course(Course* c) { courses.push_back(c); }
 
 	void traverse() {
 
@@ -101,6 +101,16 @@ public:
 		for (itr = courses.begin(); itr != courses.end(); ++itr){
 		
 			if ((*itr)->get_name() == n) {return *itr;}
+		}
+	}
+
+	Course* GetCourseByID(int id) {
+
+		list<Course*>::iterator itr;
+
+		for (itr = courses.begin(); itr != courses.end(); ++itr) {
+
+			if ((*itr)->get_courseID() == id) { return *itr; }
 		}
 	}
 
