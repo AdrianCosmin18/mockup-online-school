@@ -4,8 +4,7 @@ class ControlEnrolment
 {
 private:
 	list<Enrolment*>enrolments;
-	ControlPerson* cp = NULL;
-	ControlCourse* cc = NULL;
+
 
 public:
 
@@ -17,37 +16,12 @@ public:
 		while (!f.eof()) {
 
 			getline(f, line);
-			Enrolment* e = new Enrolment(line);
-			enrolments.push_back(e);
-
-
-			Person* p = cp->GetPersonByID(e->get_studentId());
-			Student* s = dynamic_cast<Student*>(p);
-
-			Course* c = cc->GetCourseByID(e->get_courseId());
-
-			s->add_course(c);
-			//iau id-ul studentului pentru a gasi studentul si ii extrag numele
-			/*int student_id = e->get_studentId();
-			int poz = cp->poz_person(student_id);
-			list<Person*>::iterator itr = cp->poz_itr_person(poz);
-			Person* p = *itr;
-			Student* s = dynamic_cast<Student*>(p);
-			string student_name = s->get_name();
-
-			int course_id = e->get_courseId();
-			int poz2 = cc->poz_course(course_id);
-			list<Course*>::iterator itr2 = cc->poz_itr_course(poz2);
-			Course* c = *itr2;
-			string course_name = c->get_name();
-
-			s->add_course(course_name);*/
-
+			enrolments.push_back(new Enrolment(line));
 
 		}
 	}
 
-	ControlEnrolment() { load(); cp = new ControlPerson; cc = new ControlCourse; }
+	ControlEnrolment() { load(); }
 
 	void traverse() {
 
@@ -57,6 +31,26 @@ public:
 			cout << (*itr)->describe();
 			cout << endl;
 		}
+	}
+
+
+	//TODO FUNCTIE CE PRIMESTE 
+	//CA PARAMATERU ID STUDENTULUI SI RETURNEAZA un vector cu toate Enrolmenturile
+
+	list<Enrolment*> Get_Enrolments_List_By_Student_id(int student_id) {
+
+
+		list<Enrolment*> en;
+		list<Enrolment*>::iterator itr;
+
+		for (itr = enrolments.begin(); itr != enrolments.end(); ++itr) {
+
+			if ((*itr)->get_studentId() == student_id) {
+				en.push_back(*itr);
+			}
+		}
+
+		return en;
 	}
 
 	void add_enrolment(Enrolment* e) { enrolments.push_back(e); }

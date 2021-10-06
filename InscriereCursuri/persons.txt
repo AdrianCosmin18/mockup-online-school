@@ -4,5 +4,5 @@
 40,Laurentiu Stan,Laur19,student,laur@yahoo.com,25
 99,Andrei Raiciu,rand123,teacher,andu@yahoo.com,39
 8,Dumitran,Dumi99,teacher,dumi@yahoo.com,45
-97,David Moise,David17,teacher,david@yahoo.com,53
+97,David Moise,David17,student,david@yahoo.com,53
 111,Mihai Dumitru,Mihaita333,student,mihai@yahoo.com,21

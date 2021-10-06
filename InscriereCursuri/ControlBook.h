@@ -81,6 +81,21 @@ public:
 			if ((*itr)->get_name() == name)
 				return (*itr)->get_id();
 		}
+
+		return -1;
+	}
+
+	list<Book*> GetBookListForStudentByStudentID(int student_id) {
+		list<Book*>b;
+
+		list<Book*>::iterator itr;
+		for (itr = books.begin(); itr != books.end(); ++itr) {
+
+			if ((*itr)->get_studentId() == student_id)
+				b.push_back(*itr);
+		}
+
+		return b;
 	}
 
 	Book* GetBookByName(string name) {

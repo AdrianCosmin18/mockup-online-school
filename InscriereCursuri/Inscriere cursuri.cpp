@@ -10,8 +10,15 @@ int main()
     Admin* a = dynamic_cast<Admin*>(d);*/
 
     ViewDirector* vd = new ViewDirector;
+    ControlPerson* cp = new ControlPerson;
+    ControlStudentIDCard* cs = new ControlStudentIDCard;
 
+
+ 
     vd->play();
+  
+
+
 
 
 

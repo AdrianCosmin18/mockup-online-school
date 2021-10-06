@@ -88,6 +88,19 @@ public:
 		}
 	}
 
+	int GetStudentIDbyCardID(int id) {
+
+		list<StudentIDCard*>::iterator itr;
+
+		for (itr = cards.begin(); itr != cards.end(); ++itr) {
+
+			if ((*itr)->get_id() == id)
+				return (*itr)->get_studentId();
+		}
+
+		return -1;
+	}
+
 	StudentIDCard* GetStudentIDCardByStudentID(int id) {
 
 		int IDCard = GetCardIDbyStudentId(id);

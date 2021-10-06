@@ -8,21 +8,25 @@ private:
 	ControlCourse* cc = NULL;
 	ControlEnrolment* ce = NULL;
 	ControlStudentIDCard* cs = NULL;
-	ControlDirector* cd = NULL;
+	//Director* dir = NULL;
 
 
 public:
 
 
-	ViewDirector() {
+	ViewDirector(/*Director*dir*/) {
 
 		cp = new ControlPerson;
 		cb = new ControlBook;
 		cc = new ControlCourse;
 		ce = new ControlEnrolment;
 		cs = new ControlStudentIDCard;
-		cd = new ControlDirector;
+
+		SaveAllCoursesToStudents();
+		
+		//this->dir = dir;
 	}
+
 
 
 
@@ -35,29 +39,29 @@ public:
 		cout << "Pentru a afla detalii despre un student apasati 13\n";
 		cout << "Pentru a obtine ID-ul unui student apasati 14\n";
 		cout << "Pentru a afisa cursurile unui student apasati 15\n";
+		cout << "Pentru a afisa toate cursurile fiecarui student in parte apasati 16\n";
 		cout << endl;
 
-		cout << "Pentru a afisa lista de carti inchiriata de studenti 21\n";
+		cout << "Pentru a afisa toate cartile inchiriate de catre un student apasati 21\n";
 		cout << "Pentru a verifica existenta unei carti apasati 22\n";
 		cout << "Pentru a afla detalii despre o carte inchiriata apasati 23\n";
 		cout << "Pentru a obtine ID-ul unui student care a inchiriat o anumita carte apasati 24\n";
 		cout << endl;
 
-		cout << "Pentru a afisa cursurile disponibile apasati \n";
-		cout << "Pentru a verifica existenta unui curs apasati tasta 2 \n";
-		cout << "Pentru a afisa ID-ul unui curs  apasati\n";
-		cout << "Pentru a afla detalii despre un curs apasati tasta 3\n";
+		cout << "Pentru a afisa cursurile disponibile apasati 31\n";
+		cout << "Pentru a verifica existenta unui curs apasati tasta 32\n";
+		cout << "Pentru a afisa ID-ul unui curs apasati 33\n";
+		cout << "Pentru a afla detalii despre un curs apasati tasta 34\n";
 		cout << endl;
 
-		cout << "Pentru a afisa lista de legitimatii inchiriata de studenti 4\n";
-		cout << "Pentru a verifica existenta unei legitimatii apasati tasta 2 \n";
-		cout << "Pentru a afla detalii despre o legitimatie apasati tasta 6\n";
-		cout << "Pentru a obtine ID-ul unui student pe baza ID-ului legitimatiei apasati tasta 7\n";
+		cout << "Pentru a afisa lista de legitimatii 41\n";
+		cout << "Pentru a verifica existenta unei legitimatii apasati tasta 42\n";
+		cout << "Pentru a obtine ID-ul unui student pe baza ID-ului legitimatie  apasati tasta 43\n";
 		cout << endl;
 
-		cout << "Pentru a afisa toate inregistrarile studentiilor la un anumit curs apasati\n";
-		cout << "Pentru a afisa existenta unei inregistrari ale unui student la un anumit curs apasati\n";
-		cout << "Pentru a afisa detalii despre o inregistrare apasati\n";
+		cout << "Pentru a afisa toate inregistrarile studentiilor la cursuri apasati 51\n";
+		cout << "Pentru a afisa existenta unei inregistrari ale unui student la un anumit curs apasati 52\n";
+
 		cout << endl;
 
 		cout << "Pentru a iesi apasati \n";
@@ -90,17 +94,22 @@ public:
 		}
 	}
 
-	//ce fac daca nu exista acest student
+
 	void get_details_student() {
 
 		string name;
 		cout << "Introduceti numele studentului : ";
 		getline(cin, name);
+		int poz = cp->GetIDbyName(name);
 
-		Person* p = cp->GetPersonbyName(name);
-		Student* s = dynamic_cast<Student*>(p);
-		cout << s->describe();
+		if (poz != -1) {
 
+			Person* p = cp->GetPersonbyName(name);
+			Student* s = dynamic_cast<Student*>(p);
+			cout << s->describe();
+		}
+		else
+			cout << "\nNu exista acest student";
 	}
 
 	void get_ID_student() {
@@ -116,14 +125,258 @@ public:
 
 	void get_courses_from_student() {
 
+		
 		string name;
 		cout << "Introduceti numele studentului ale caror cursuri vrei sa le vezi : ";
 		getline(cin, name);
 
-		Person* p = cp->GetPersonbyName(name);
+		int student_id = cp->GetIDbyName(name);
+		Person* p = cp->GetPersonByID(student_id);
+
+
 		Student* s = dynamic_cast<Student*>(p);
 
+		SaveCourseToStudent(student_id);
+
 		s->traverse();
+
+	}
+
+
+
+	void SaveAllCoursesToStudents() {
+
+		int student_id;
+		list<Person*>persons = cp->get_persons();
+		list<Person*>::iterator itr;
+
+		for (itr = persons.begin(); itr != persons.end(); ++itr) {
+
+			if ((*itr)->describe().find("student") != string::npos) {
+
+				student_id = (*itr)->get_personID();
+				SaveCourseToStudent(student_id);
+			}
+		}
+	}
+
+	void SaveCourseToStudent(int student_id) {
+
+		Person* p = cp->GetPersonByID(student_id);
+
+
+		Student* s = dynamic_cast<Student*>(p);
+		list<Course*>cs;
+
+
+		list<Enrolment*> en = ce->Get_Enrolments_List_By_Student_id(student_id);
+
+
+
+		list<Enrolment*>::iterator itr;
+
+		for (itr = en.begin(); itr != en.end(); ++itr) {
+
+			Course* c = cc->GetCourseByID((*itr)->get_courseId());
+		
+			s->add_course(c);
+		}
+
+	}
+
+	void GetAllStudentsCourses() {
+
+		list<Person*>persons = cp->get_persons();
+		list<Person*>::iterator itr;
+
+		for (itr = persons.begin(); itr != persons.end(); ++itr) {
+
+			if ((*itr)->describe().find("student") != string::npos) {
+
+				Student* s = dynamic_cast<Student*>(*itr);
+
+				cout << "Studentul " << s->get_name() << " participa la cursurile : ";
+				s->traverse();
+
+			}
+		}
+	}
+
+
+
+	void GetStudentBooks() {
+
+		string name;
+		cout << "Introduceti numele studentului ale caror carti inchiriate vrei sa le vezi : ";
+		getline(cin, name);
+
+		int student_id = cp->GetIDbyName(name);
+
+		list<Book*> books = cb->GetBookListForStudentByStudentID(student_id);
+
+		list<Book*>::iterator itr;
+		cout << "Cartile studentului " << name << " sunt : " << endl;
+
+		for (itr = books.begin(); itr != books.end(); ++itr) {
+
+			cout << (*itr)->get_name();
+			cout << endl;
+		}
+	}
+
+	void exist_book() {
+
+		string name;
+		cout << "Introduceti numele cartii : ";
+		getline(cin, name);
+
+		if (cb->GetIDbyName(name) != -1) {
+
+			Book* b = cb->GetBookByName(name);
+			cout << b->describe();
+		}
+		else { cout << "Cartea cu acest nume nu exista"; }
+
+	}
+
+	void get_details_book() {
+
+		string name;
+		cout << "Introduceti numele cartii : ";
+		getline(cin, name);
+
+		if (cb->GetIDbyName(name) != -1) {
+
+			Book* b = cb->GetBookByName(name);
+			cout << b->describe();
+		}
+		else{ cout << "Cartea cu acest nume nu exista"; }
+	}
+
+	void GetStudentIdByBookName() {
+
+		string name;
+		cout << "Introduceti numele cartii : ";
+		getline(cin, name);
+
+		if (cb->GetIDbyName(name) != -1) {
+
+			Book* b = cb->GetBookByName(name);
+			cout << "ID-ul studentului care a inchiriat aceasta carte este : " << b->get_studentId();
+			cout << endl;
+		}
+		else { cout << "Cartea cu acest nume nu exista"; }
+	}
+
+
+
+	void exist_course() {
+
+		string name;
+		cout << "\nIntroduceti numele cursului : ";
+		getline(cin, name);
+
+		int id = cc->GetIdByName(name);
+		if (id != -1)
+			cout << cc->GetCourseByID(id)->describe();
+		else
+			cout << "\nNu exista un curs cu acest nume";
+
+	}
+
+	void get_ID_Course() {
+
+		string name;
+		cout << "\nIntroduceti numele cursului : ";
+		getline(cin, name);
+
+		int id = cc->GetIdByName(name);
+
+		if (id != -1)
+			cout << "\nID-ul cursului este : " << id;
+		else
+			cout << "\nNumele cursului introdus nu exista";
+	}
+
+	void get_details_course() {
+
+		string name;
+		cout << "\nIntroduceti numele cursului despre care doriti sa aflati detalii : ";
+		getline(cin, name);
+
+		if (cc->GetIdByName(name) != -1) {
+			Course* c = cc->GetCourseByName(name);
+			cout << c->describe();
+		}
+		else
+		{
+			cout << "\nNu exista acest curs";
+		}
+	}
+
+
+
+	void exist_card() {
+
+		string name;
+		cout << "\nIntroduceti numele studentului a carui legitimatie o doriti : ";
+		getline(cin, name);
+
+		Person* p = cp->GetPersonbyName(name);
+	
+
+		if (p->describe().find("student") != string::npos) {
+
+			Student* s = dynamic_cast<Student*>(p);
+
+			int student_id = cp->GetIDbyName(name);
+
+			cout << cs->GetStudentIDCardByStudentID(student_id)->describe();
+
+		}
+		else
+			cout << "\nNu exista acest student";
+
+	}
+
+	void get_studentID_by_cardID() {
+
+		string a;
+		cout << "\nIntroduceti ID-ul legitimatiei : ";
+		getline(cin, a);
+		int cardID = stoi(a);
+
+		if (cs->GetStudentIDbyCardID(cardID) != -1)
+			cout << "\nID-ul studentului este : " << cs->GetStudentIDbyCardID(cardID);
+		else
+			cout << "\nNu este asociat niciunui student acest ID de legitimatie";
+	}
+
+
+
+	void get_enrolment_by_IDs() {
+
+
+		string a, b;
+		int student_id;
+		cout << "\nIntroduceti ID-ul studentului : ";
+		getline(cin, a);
+		student_id = stoi(a);
+
+		int course_id;
+		cout << "\nIntroduceti ID-ul cursului : ";
+		getline(cin, b);
+		course_id = stoi(b);
+
+		if (ce->get_poz(student_id, course_id) != -1) {
+
+			Enrolment* e = ce->GetEnrolmentByIDs(student_id, course_id);
+			cout << e->describe();
+		}
+		else
+			cout << "\nAcest student nu s-a inregistrat la acest curs sau nu exista acest curs sau nu exista acest student";
+
+
 	}
 
 
@@ -159,8 +412,47 @@ public:
 			case 15: get_courses_from_student();
 				break;
 
+			case 16: GetAllStudentsCourses();
+				break;
 
+			case 21: GetStudentBooks();
+				break;
 
+			case 22: exist_book();
+				break;
+
+			case 23: get_details_book();
+				break;
+
+			case 24: GetStudentIdByBookName();
+				break;
+
+			case 31:cc->traverse();
+				break;
+
+			case 32:exist_course();
+				break;
+
+			case 33: get_ID_Course();
+				break;
+
+			case 34: get_details_course();
+				break;
+
+			case 41:cs->traverse();
+				break;
+
+			case 42:exist_card();
+				break;
+
+			case 43:get_studentID_by_cardID();
+				break;
+
+			case 51:ce->traverse();
+				break;
+
+			case 52:get_enrolment_by_IDs();
+				break;
 			}
 
 		}

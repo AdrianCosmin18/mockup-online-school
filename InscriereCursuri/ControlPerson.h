@@ -12,6 +12,8 @@ public:
 		load();
 	}
 
+	list<Person*> get_persons() { return persons; }
+
 
 	void load() {
 
