@@ -1,4 +1,4 @@
-#include"ViewDirector.h"
+#include"ViewAdmin.h"
 
 int main()
 {
@@ -9,19 +9,17 @@ int main()
     Director * d = cd->GetDirectorByName("Paul Vlad");
     Admin* a = dynamic_cast<Admin*>(d);*/
 
+    ViewAdmin* va = new ViewAdmin;
     ViewDirector* vd = new ViewDirector;
     ControlPerson* cp = new ControlPerson;
     ControlStudentIDCard* cs = new ControlStudentIDCard;
 
 
- 
-    vd->play();
+    va->play();
   
 
 
-
-
-
+    
 
 
 

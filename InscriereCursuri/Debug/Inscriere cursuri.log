@@ -1,7 +1,9 @@
 ﻿  Inscriere cursuri.cpp
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(149,14): warning C4101: 'n': unreferenced local variable
-  ViewDirector.cpp
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ViewAdmin.h(245,11): warning C4129: 'N': unrecognized character escape sequence
+  ViewAdmin.cpp
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(149,14): warning C4101: 'n': unreferenced local variable
+C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ViewAdmin.h(245,11): warning C4129: 'N': unrecognized character escape sequence
   Generating Code...
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlPerson.h(125): warning C4715: 'ControlPerson::GetPersonbyName': not all control paths return a value
 C:\Users\Cosmin\C++Meditatii\OOP\Polimorfism\ProiectPlatormaInscriereCursuri\InscriereCursuri\ControlBook.h(110): warning C4715: 'ControlBook::GetBookByName': not all control paths return a value

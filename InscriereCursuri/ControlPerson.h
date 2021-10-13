@@ -174,5 +174,16 @@ public:
 		cout << "\nNr de profi este de : " << countt;
 		cout << "\nNr de studenti este de : " << counts;
 	}
+
+
+	void CoutListOfIDs() {
+
+		list<Person*>::iterator itr;
+
+		for (itr = persons.begin(); itr != persons.end(); ++itr) {
+
+			cout << (*itr)->get_personID() << ", ";
+		}
+	}
 };
 

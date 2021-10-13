@@ -34,6 +34,10 @@ public:
 
 		cout << endl;
 		cout << endl;
+		cout << endl;
+
+		cout << "Pentru a iesi apasati 0\n";
+		cout << endl;
 		cout << "Pentru a afisa toti studentii apasati 11\n";
 		cout << "Pentru a verifica existenta unui student apasati 12\n";
 		cout << "Pentru a afla detalii despre un student apasati 13\n";
@@ -62,9 +66,7 @@ public:
 		cout << "Pentru a afisa toate inregistrarile studentiilor la cursuri apasati 51\n";
 		cout << "Pentru a afisa existenta unei inregistrari ale unui student la un anumit curs apasati 52\n";
 
-		cout << endl;
 
-		cout << "Pentru a iesi apasati \n";
 	}
 
 	void exist_student() {
@@ -452,6 +454,9 @@ public:
 				break;
 
 			case 52:get_enrolment_by_IDs();
+				break;
+
+			case 0:oprire = 1;
 				break;
 			}
 

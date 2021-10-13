@@ -55,6 +55,7 @@ public:
 
 	bool operator==(const Person &p) {
 
+		cout << "\nEqual by price";
 		return this->personID == p.personID;
 	}
 
